@@ -1,0 +1,4 @@
+export JACKAL_PS4=1
+export JACKAL_ARK_ENCLOSURE=1
+export JACKAL_WIRELESS_INTERFACE=wlp2s0
+export JACKAL_URDF_EXTRAS=$(catkin_find qut10_jackal urdf/qut10_jackal_extras.urdf.xacro --first-only)

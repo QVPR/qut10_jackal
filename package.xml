@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package>
+	<name>qut10_jackal</name>
+	<version>0.0.0</version>
+	<description>Customizations for the qut10_jackal </description>
+	<maintainer email="code@clearpathrobotics.com">Clearpath Team</maintainer>
+	<license>BSD</license>
+	<buildtool_depend>catkin</buildtool_depend>
+	<run_depend>jackal_description</run_depend>
+</package>

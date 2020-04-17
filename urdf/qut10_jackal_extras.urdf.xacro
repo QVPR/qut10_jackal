@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- Create a fixed joint to connect the mesh to the rest of the robot-->
+  
+<robot
+ xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- Sensors --> 
+  <link name="sensors_link">
+   <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+    <mesh filename="package://qut10_jackal/meshes/qut10sensors.dae" />
+    </geometry> 
+   </visual>
+  </link>
+
+  <joint name="sensors_to_mid_mount" type="fixed">
+    <parent link="mid_mount" />
+    <child link="sensors_link" />
+    <origin xyz="0 0 0"/>
+  </joint>
+
+</robot>
+
+
+
