@@ -17,7 +17,16 @@
   <joint name="sensors_to_mid_mount" type="fixed">
     <parent link="mid_mount" />
     <child link="sensors_link" />
-    <origin xyz="0 0 0"/>
+    <origin xyz="-0.015 0 0.005"/>
+  </joint>
+
+<!-- VLP16 Link --> 
+   <link name="velodyne"/>
+
+  <joint name="velodyne_to_mount" type="fixed">
+    <parent link="mid_mount" />
+    <child link="velodyne" />
+    <origin xyz="0.0701 0.00134 0.114"/>
   </joint>
 
 </robot>
