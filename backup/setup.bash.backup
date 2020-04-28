@@ -8,6 +8,7 @@ export ROBOT_SETUP=/etc/ros/setup.bash
 # for scripts to insert to this file.
 ######
 
+export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=5 #ARK LCM URL Details
 
 # Pass through to the main ROS workspace of the system.
 #source /opt/ros/kinetic/setup.bash
