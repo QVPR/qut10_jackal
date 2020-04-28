@@ -32,7 +32,7 @@
 <!-- Front Laser --> 
    <link name="front_laser"/>
 
-  <joint name="velodyne_to_mount" type="fixed">
+  <joint name="laser_to_fmount" type="fixed">
     <parent link="front_mount" />
     <child link="front_laser" />
     <origin xyz="0 0 0"/>
@@ -41,7 +41,7 @@
 <!-- Rear Laser --> 
    <link name="rear_laser"/>
 
-  <joint name="velodyne_to_mount" type="fixed">
+  <joint name="laser_to_rmount" type="fixed">
     <parent link="rear_mount" />
     <child link="rear_laser" />
     <origin xyz="0 0 0"/>
