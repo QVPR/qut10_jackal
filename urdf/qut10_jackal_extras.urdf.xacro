@@ -29,23 +29,6 @@
     <origin xyz="0.0701 0.00134 0.114"/>
   </joint>
 
-<!-- Front Laser  -->
-   <link name="front_laser"/>
-
-  <joint name="laser_to_fmount" type="fixed">
-    <parent link="front_ust10_laser" />
-    <child link="front_laser" />
-    <origin xyz="0 0 0"/>
-  </joint>
-
-<!-- Rear Laser  -->
-   <link name="rear_laser"/>
-
-  <joint name="laser_to_rmount" type="fixed">
-    <parent link="rear_ust10_laser" />
-    <child link="rear_laser" />
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
 
 
 </robot>
