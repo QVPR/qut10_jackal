@@ -1,3 +1,4 @@
+
 # Mark location of self so that robot_upstart knows where to find the setup file.
 export ROBOT_SETUP=/etc/ros/setup.bash
 
@@ -7,12 +8,11 @@ export ROBOT_SETUP=/etc/ros/setup.bash
 # Insert extra platform-level environment variables here. The six hashes below are a marker
 # for scripts to insert to this file.
 ######
-
-export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=5 #ARK LCM URL Details
+export LCM_DEFAULT_URL=udpm://239.255.76.67:7667?ttl=5
 
 # Pass through to the main ROS workspace of the system.
 #source /opt/ros/kinetic/setup.bash
+
 source /home/administrator/catkin_ws/devel/setup.bash
 source /home/administrator/catkin_ws/src/qut10_jackal/scripts/qut10_envars
-
 
