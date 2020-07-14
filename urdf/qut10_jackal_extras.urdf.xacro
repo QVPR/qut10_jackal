@@ -29,6 +29,15 @@
     <origin xyz="0.0701 0.00134 0.114"/>
   </joint>
 
+<!-- Occam camera --> 
+   <link name="occam"/>
+
+  <joint name="occam_to_mount" type="fixed">
+    <parent link="mid_mount" />
+    <child link="occam" />
+    <origin xyz="0.0701 0.00134 0.219"/>
+  </joint>
+
 
 </robot>
 
