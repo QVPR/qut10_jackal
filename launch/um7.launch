@@ -16,7 +16,7 @@
 </node>
 
 <!-- set transformations to UM7 with reference to jackal base link (centre bottom), X Y Z Yaw Pitch Roll-->
-<node pkg="tf" type="static_transform_publisher" name="um7_broadcaster" args="0.065 -0.11 0.006 1.5708 0 0 front_mount um7_imu_link 100$
+<node pkg="tf" type="static_transform_publisher" name="um7_broadcaster" args="0.065 -0.11 0.006 1.5708 0 0 front_mount um7_imu_link 100">
 
 </launch>
 
