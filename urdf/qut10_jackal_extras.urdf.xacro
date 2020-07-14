@@ -38,6 +38,24 @@
     <origin xyz="0.0701 0.00134 0.219"/>
   </joint>
 
+<!-- Right front camera --> 
+   <link name="right_cam"/>
+
+  <joint name="right_cam_to_mount" type="fixed">
+    <parent link="front_mount" />
+    <child link="right_cam" />
+    <origin xyz="0.1 -0.122 0.075"/>
+  </joint>
+
+<!-- Left front camera --> 
+   <link name="left_cam"/>
+
+  <joint name="left_cam_to_mount" type="fixed">
+    <parent link="front_mount" />
+    <child link="left_cam" />
+    <origin xyz="0.1 0.122 0.075"/>
+  </joint>
+
 
 </robot>
 
