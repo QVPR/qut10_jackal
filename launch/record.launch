@@ -1,0 +1,39 @@
+<launch>
+    <arg name="record_event_camera" default="false" />
+    <arg name="record_gps" default="false" />
+    <arg name="record_front_laser" default="false" />
+    <arg name="record_rear_laser" default="false" />
+    <arg name="record_velodyne_laser" default="true" />
+    <arg name="record_odometry" default="true" />
+    <arg name="record_inbuilt_imu" default="false" />
+    <arg name="record_um7_imu" default="false" />
+
+    <arg name="general_topics" value="/cmd_vel /e_stop /feedback /joint_states /diagnostics /rosout /tf /tf_static /wifi_connected" />
+
+    <arg name="event_camera_topics" value="/dvs/camera_info /dvs/events /dvs/image_raw /dvs/imu" if="$(arg record_event_camera)" />
+    <arg name="event_camera_topics" value="" unless="$(arg record_event_camera)" />
+
+    <arg name="gps_topics" value="/gps/fix /gps/nmea_sentence /gps/nmea_sentence_out /gps/time_reference /gps/vel /navsat/fix /navsat/nmea_sentence /navsat/time_reference /odometry/gps" if="$(arg record_gps)" />
+    <arg name="gps_topics" value="" unless="$(arg record_gps)" />
+
+    <arg name="front_laser_topics" value="/front/scan" if="$(arg record_front_laser)" />
+    <arg name="front_laser_topics" value="" unless="$(arg record_front_laser)" />
+
+    <arg name="rear_laser_topics" value="/rear/scan" if="$(arg record_rear_laser)" />
+    <arg name="rear_laser_topics" value="" unless="$(arg record_rear_laser)" />
+
+    <arg name="velodyne_laser_topics" value="/rear/scan" if="$(arg record_velodyne_laser)" />
+    <arg name="velodyne_laser_topics" value="" unless="$(arg record_velodyne_laser)" />
+
+    <arg name="odometry_topics" value="/odometry/filtered" if="$(arg record_odometry)" />
+    <arg name="odometry_topics" value="" unless="$(arg record_odometry)" />
+
+    <arg name="inbuilt_imu_topics" value="/imu/data /imu_data_raw /imu/mag" if="$(arg record_inbuilt_imu)" />
+    <arg name="inbuilt_imu_topics" value="" unless="$(arg record_inbuilt_imu)" />
+
+    <arg name="um7_imu_topics" value="/imu_um7/data /imu_um7/data_raw /imu_um7/mag /imu_um7/rpy /imu_um7/temperature" if="$(arg record_um7_imu)" />
+    <arg name="um7_imu_topics" value="" unless="$(arg record_um7_imu)" />
+
+    <node pkg="rosbag" type="record" name="rosbag_recordm"
+          args="record -o /home/administrator/bags $(arg general_topics) $(arg event_camera_topics) $(arg gps_topics) $(arg front_laser_topics) $(arg rear_laser_topics) $(arg velodyne_laser_topics) $(arg odometry_topics) $(arg inbuilt_imu_topics) $(arg um7_imu_topics)" />
+</launch>
