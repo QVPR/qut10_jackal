@@ -1,12 +1,12 @@
 <launch>
     <arg name="record_event_camera" default="false" />
     <arg name="record_gps" default="false" />
-    <arg name="record_front_laser" default="false" />
-    <arg name="record_rear_laser" default="false" />
+    <arg name="record_front_laser" default="true" />
+    <arg name="record_rear_laser" default="true" />
     <arg name="record_velodyne_laser" default="true" />
     <arg name="record_odometry" default="true" />
-    <arg name="record_inbuilt_imu" default="false" />
-    <arg name="record_um7_imu" default="false" />
+    <arg name="record_inbuilt_imu" default="true" />
+    <arg name="record_um7_imu" default="true" />
 
     <arg name="general_topics" value="/cmd_vel /e_stop /feedback /joint_states /diagnostics /rosout /tf /tf_static /wifi_connected" />
 
@@ -22,7 +22,7 @@
     <arg name="rear_laser_topics" value="/rear/scan" if="$(arg record_rear_laser)" />
     <arg name="rear_laser_topics" value="" unless="$(arg record_rear_laser)" />
 
-    <arg name="velodyne_laser_topics" value="/rear/scan" if="$(arg record_velodyne_laser)" />
+    <arg name="velodyne_laser_topics" value="/scan" if="$(arg record_velodyne_laser)" />
     <arg name="velodyne_laser_topics" value="" unless="$(arg record_velodyne_laser)" />
 
     <arg name="odometry_topics" value="/odometry/filtered" if="$(arg record_odometry)" />
