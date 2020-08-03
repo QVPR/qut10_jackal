@@ -1,12 +1,15 @@
 <launch>
     <arg name="record_event_camera" default="false" />
-    <arg name="record_gps" default="false" />
+    <arg name="record_gps" default="true" />
     <arg name="record_front_laser" default="true" />
     <arg name="record_rear_laser" default="true" />
     <arg name="record_velodyne_laser" default="true" />
     <arg name="record_odometry" default="true" />
     <arg name="record_inbuilt_imu" default="true" />
     <arg name="record_um7_imu" default="true" />
+    <arg name="record_occam_tiles" default="false" />
+    <arg name="record_occam_individual" default="false" />
+    <arg name="record_occam_front" default="true" />
 
     <arg name="general_topics" value="/cmd_vel /e_stop /feedback /joint_states /diagnostics /rosout /tf /tf_static /wifi_connected" />
 
@@ -34,6 +37,15 @@
     <arg name="um7_imu_topics" value="/imu_um7/data /imu_um7/data_raw /imu_um7/mag /imu_um7/rpy /imu_um7/temperature" if="$(arg record_um7_imu)" />
     <arg name="um7_imu_topics" value="" unless="$(arg record_um7_imu)" />
 
-    <node pkg="rosbag" type="record" name="rosbag_recordm"
-          args="record -o /home/administrator/bags $(arg general_topics) $(arg event_camera_topics) $(arg gps_topics) $(arg front_laser_topics) $(arg rear_laser_topics) $(arg velodyne_laser_topics) $(arg odometry_topics) $(arg inbuilt_imu_topics) $(arg um7_imu_topics)" />
+    <arg name="occam_tile_image_topics" value="/ros_indigosdk_occam/image_tiles0/compressed /ros_indigosdk_occam/stitched_image0/compressed" if="$(arg record_occam_tiles)" />
+    <arg name="occam_tile_image_topics" value="" unless="$(arg record_occam_tiles)" />
+
+    <arg name="occam_front_topics" value="/ros_indigosdk_occam/camera_info0 /ros_indigosdk_occam/image0/compressed" if="$(arg record_occam_front)" />
+    <arg name="occam_front_topics" value="" unless="$(arg record_occam_front)" />
+
+    <arg name="occam_individual_image_topics" value="/ros_indigosdk_occam/camera_info0 /ros_indigosdk_occam/camera_info1 /ros_indigosdk_occam/camera_info2 /ros_indigosdk_occam/camera_info3 /ros_indigosdk_occam/camera_info4 /ros_indigosdk_occam/image0/compressed /ros_indigosdk_occam/image1/compressed /ros_indigosdk_occam/image2/compressed /ros_indigosdk_occam/image3/compressed /ros_indigosdk_occam/image4/compressed" />
+    <arg name="occam_individual_image_topics" value="" unless="$(arg record_occam_individual)" />
+
+    <node pkg="rosbag" type="record" name="rosbag_record"
+          args="record -o /home/administrator/bags $(arg general_topics) $(arg event_camera_topics) $(arg gps_topics) $(arg front_laser_topics) $(arg rear_laser_topics) $(arg velodyne_laser_topics) $(arg odometry_topics) $(arg inbuilt_imu_topics) $(arg um7_imu_topics) $(arg occam_tile_image_topics) $(arg occam_individual_image_topics)" />
 </launch>
