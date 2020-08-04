@@ -2,9 +2,11 @@ A repository for qut10_jackal.
 
 ### Changes from the original state of the robot
 - Clearpath suggests using `wicd` to manage the WiFi connection, while we use `nmcli` instead.
-- Static IP for the robot on the QUT WiFi: 172.19.41.221
-- Make sure to add `172.19.41.221	jackal cpr-qut10.cpr-qut10 cpr-qut10` to your `/etc/hosts/` file
-- Enabled Port Forwarding to the ARK as described in Section 4.10 of the ARK user manual; you can reach the ARK with Chrome on http://172.19.41.221
+- Static IP for the robot on the QUT WiFi: 172.19.54.2
+- Make sure to add `172.19.54.2	jackal cpr-qut10.cpr-qut10 cpr-qut10` to your `/etc/hosts/` file
+- Enabled Port Forwarding to the ARK as described in Section 4.10 of the ARK user manual; you can reach the ARK with Chrome on http://172.19.54.2
+- Corrected time zone: `sudo timedatectl set-timezone Australia/Brisbane`
+- Added QUT time server: https://wiki.qut.edu.au/display/cyphy/Our+NTP+server+setting+tutorial
 
 ### Install on new machines
 - Install jackal related packages: `sudo apt install ros-$ROS_DISTRO-jackal* ros-$ROS_DISTRO-ros-control ros-$ROS_DISTRO-joint-state-controller ros-$ROS_DISTRO-effort-controllers ros-$ROS_DISTRO-position-controllers ros-$ROS_DISTRO-velocity-controllers ros-$ROS_DISTRO-ros-controllers ros-$ROS_DISTRO-gazebo-ros ros-$ROS_DISTRO-gazebo-ros-control`
