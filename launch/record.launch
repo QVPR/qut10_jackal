@@ -43,7 +43,7 @@
     <arg name="occam_front_topics" value="/ros_indigosdk_occam/camera_info0 /ros_indigosdk_occam/image0/compressed" if="$(arg record_occam_front)" />
     <arg name="occam_front_topics" value="" unless="$(arg record_occam_front)" />
 
-    <arg name="occam_individual_image_topics" value="/ros_indigosdk_occam/camera_info0 /ros_indigosdk_occam/camera_info1 /ros_indigosdk_occam/camera_info2 /ros_indigosdk_occam/camera_info3 /ros_indigosdk_occam/camera_info4 /ros_indigosdk_occam/image0/compressed /ros_indigosdk_occam/image1/compressed /ros_indigosdk_occam/image2/compressed /ros_indigosdk_occam/image3/compressed /ros_indigosdk_occam/image4/compressed" />
+    <arg name="occam_individual_image_topics" value="/ros_indigosdk_occam/camera_info0 /ros_indigosdk_occam/camera_info1 /ros_indigosdk_occam/camera_info2 /ros_indigosdk_occam/camera_info3 /ros_indigosdk_occam/camera_info4 /ros_indigosdk_occam/image0/compressed /ros_indigosdk_occam/image1/compressed /ros_indigosdk_occam/image2/compressed /ros_indigosdk_occam/image3/compressed /ros_indigosdk_occam/image4/compressed" if="$(arg record_occam_individual)" />
     <arg name="occam_individual_image_topics" value="" unless="$(arg record_occam_individual)" />
 
     <node pkg="rosbag" type="record" name="rosbag_record"
