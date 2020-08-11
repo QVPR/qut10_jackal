@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="ros_indigosdk" type="ros_indigosdk_node" name="ros_indigosdk_occam" />
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+  <node name="davis_ros_driver" pkg="davis_ros_driver" type="davis_ros_driver" required="false">
+    <param name="autoexposure_enabled" value="true"/>
+    <param name="PrBp_coarse" value="3"/>
+    <param name="PrBp_fine" value="0"/>
+  </node>
+</launch>

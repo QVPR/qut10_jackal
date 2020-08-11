@@ -1,1 +1,0 @@
-/etc/ros/melodic/ros.d
