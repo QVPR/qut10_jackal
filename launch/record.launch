@@ -1,8 +1,8 @@
 <launch>
     <arg name="record_event_camera" default="false" />
     <arg name="record_gps" default="true" />
-    <arg name="record_front_laser" default="true" />
-    <arg name="record_rear_laser" default="true" />
+    <arg name="record_front_laser" default="false" />
+    <arg name="record_rear_laser" default="false" />
     <arg name="record_velodyne_laser" default="true" />
     <arg name="record_odometry" default="true" />
     <arg name="record_inbuilt_imu" default="true" />
@@ -28,10 +28,10 @@
     <arg name="velodyne_laser_topics" value="/scan" if="$(arg record_velodyne_laser)" />
     <arg name="velodyne_laser_topics" value="" unless="$(arg record_velodyne_laser)" />
 
-    <arg name="odometry_topics" value="/odometry/filtered" if="$(arg record_odometry)" />
+    <arg name="odometry_topics" value="/odometry/filtered /accel/filtered /jackal_velocity_controller/odom" if="$(arg record_odometry)" />
     <arg name="odometry_topics" value="" unless="$(arg record_odometry)" />
 
-    <arg name="inbuilt_imu_topics" value="/imu/data /imu_data_raw /imu/mag" if="$(arg record_inbuilt_imu)" />
+    <arg name="inbuilt_imu_topics" value="/imu/data /imu_data_raw /imu/mag /imu/bias /imu/bias_removed" if="$(arg record_inbuilt_imu)" />
     <arg name="inbuilt_imu_topics" value="" unless="$(arg record_inbuilt_imu)" />
 
     <arg name="um7_imu_topics" value="/imu_um7/data /imu_um7/data_raw /imu_um7/mag /imu_um7/rpy /imu_um7/temperature" if="$(arg record_um7_imu)" />
