@@ -9,6 +9,7 @@ A repository for qut10_jackal.
 - Set `magnetic_declination_radians: 0.1923` in `/etc/ros/melodic/ros.d/navsat.launch`
 - Let ntpdate wait for network to be up: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766838#20
 - Disable ipv6 in GRUB: https://www.configserverfirewall.com/ubuntu-linux/ubuntu-disable-ipv6/
+- Disable WiFi Power management: add `/sbin/iwconfig wlp3s0 power off` to `/etc/rc.local`
 
 ### Setting up a new robot
 - ros.d contains custom scripts that are running at startup through the ROS service setup by clearpath. This should be put in /etc/ros/melodic/ros.d when setting up the robot.
