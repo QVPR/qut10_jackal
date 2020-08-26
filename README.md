@@ -7,7 +7,8 @@ A repository for qut10_jackal.
 - Corrected time zone: `sudo timedatectl set-timezone Australia/Brisbane`
 - Added QUT time server: https://wiki.qut.edu.au/display/cyphy/Our+NTP+server+setting+tutorial
 - Set `magnetic_declination_radians: 0.1923` in `/etc/ros/melodic/ros.d/navsat.launch`
-- https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766838#20
+- Let ntpdate wait for network to be up: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766838#20
+- Disable ipv6 in GRUB: https://www.configserverfirewall.com/ubuntu-linux/ubuntu-disable-ipv6/
 
 ### Setting up a new robot
 - ros.d contains custom scripts that are running at startup through the ROS service setup by clearpath. This should be put in /etc/ros/melodic/ros.d when setting up the robot.
