@@ -10,6 +10,8 @@ A repository for qut10_jackal.
 - Let ntpdate wait for network to be up: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=766838#20
 - Disable ipv6 in GRUB: https://www.configserverfirewall.com/ubuntu-linux/ubuntu-disable-ipv6/
 - Disable WiFi Power management: add `/sbin/iwconfig wlp3s0 power off` to `/etc/rc.local`
+- Static IP for eth0: 192.168.12.1 and DVS: 192.168.12.2
+- IDS camera can be tested with `ueyedemo` however it will appear dark indoors with default settings 
 
 ### Setting up a new robot
 - ros.d contains custom scripts that are running at startup through the ROS service setup by clearpath. This should be put in /etc/ros/melodic/ros.d when setting up the robot.
