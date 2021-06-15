@@ -5,5 +5,5 @@ export JACKAL_FRONT_FENDER_UST10=1
 export JACKAL_REAR_ACCESSORY_FENDER=1
 export JACKAL_REAR_FENDER_UST10=1
 export JACKAL_ARK_ENCLOSURE=1
-export JACKAL_WIRELESS_INTERFACE=wlp3s0
+export JACKAL_WIRELESS_INTERFACE=wlan0
 export JACKAL_URDF_EXTRAS=$(catkin_find qut10_jackal urdf/qut10_jackal_extras.urdf.xacro --first-only)

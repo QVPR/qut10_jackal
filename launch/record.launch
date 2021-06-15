@@ -1,9 +1,9 @@
 <launch>
     <arg name="record_event_camera" default="false" />
-    <arg name="record_gps" default="true" />
+    <arg name="record_gps" default="false" />
     <arg name="record_front_laser" default="false" />
     <arg name="record_rear_laser" default="false" />
-    <arg name="record_velodyne_laser" default="true" />
+    <arg name="record_velodyne_laser" default="false" />
     <arg name="record_odometry" default="true" />
     <arg name="record_inbuilt_imu" default="true" />
     <arg name="record_um7_imu" default="true" />
@@ -47,5 +47,5 @@
     <arg name="occam_individual_image_topics" value="" unless="$(arg record_occam_individual)" />
 
     <node pkg="rosbag" type="record" name="rosbag_record"
-          args="record -o /home/administrator/bags $(arg general_topics) $(arg event_camera_topics) $(arg gps_topics) $(arg front_laser_topics) $(arg rear_laser_topics) $(arg velodyne_laser_topics) $(arg odometry_topics) $(arg inbuilt_imu_topics) $(arg um7_imu_topics) $(arg occam_tile_image_topics) $(arg occam_individual_image_topics)" />
+          args="record -o /home/administrator/bags $(arg general_topics) $(arg event_camera_topics) $(arg gps_topics) $(arg front_laser_topics) $(arg rear_laser_topics) $(arg velodyne_laser_topics) $(arg odometry_topics) $(arg inbuilt_imu_topics) $(arg um7_imu_topics) $(arg occam_tile_image_topics) $(arg occam_individual_image_topics) $(arg occam_front_topics)" />
 </launch>

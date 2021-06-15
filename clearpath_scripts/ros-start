@@ -7,7 +7,8 @@ function log() {
 
 log info "ros: Using workspace setup file /etc/ros/setup.bash"
 source /etc/ros/setup.bash
-JOB_FOLDER=/etc/ros/melodic/ros.d
+source /home/administrator/catkin_ws/devel/setup.bash
+JOB_FOLDER=/etc/ros/noetic/ros.d
 
 log_path="/tmp"
 if [[ ! -d $log_path ]]; then
@@ -30,6 +31,8 @@ export ROS_HOSTNAME=$(hostname)
 export ROS_MASTER_URI=http://127.0.0.1:11311
 export ROS_HOME=${ROS_HOME:=$(echo ~administrator)/.ros}
 export ROS_LOG_DIR=$log_path
+
+export JACKAL_MAG_CONFIG=/home/administrator/catkin_ws/src/jackal_robot/jackal_base/config/mag_config_default.yaml
 
 log info "ros: Launching ROS_HOSTNAME=$ROS_HOSTNAME, ROS_IP=$ROS_IP, ROS_MASTER_URI=$ROS_MASTER_URI, ROS_HOME=$ROS_HOME, ROS_LOG_DIR=$log_path"
 

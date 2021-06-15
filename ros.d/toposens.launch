@@ -1,0 +1,24 @@
+<launch>
+
+  <!-- declare arguments with default values -->
+  <arg name="port" default="/dev/toposens" />
+
+  <arg name="pcd_path" default="" />
+  <arg name="lifetime_normals_vis" default="0.0" />
+
+  <!-- start nodelet manager and driver nodelets -->
+  <include file="$(find toposens_driver)/launch/toposens_driver.launch">
+    <arg name="port" value="$(arg port)"/>
+  </include>
+
+  <node name="toposens_markers" pkg="toposens_markers" type="toposens_markers_node" required="false">
+  </node>
+
+  <node pkg="toposens_pointcloud" type="toposens_pointcloud_node" name="ts_cloud_node" output="screen">
+    <param name="scans_topic" value="ts_scans" />
+    <param name="target_frame" value="toposens" />
+    <param name="pcd_save_interval" value="0" /> <!-- set to zero for non logging the pointcloud -->
+    <param name="lifetime_normals_vis" value="$(arg lifetime_normals_vis)" /> <!-- set to 0.0 for not visualizing the normals -->
+  </node>
+
+</launch>

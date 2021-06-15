@@ -1,0 +1,3 @@
+# SUBSYSTEMS=="usb", ATTRS{manufacturer}=="Hokuyo*", SYMLINK+="hokuyo hokuyo_$attr{devpath}", MODE="0666"
+# KERNEL=="ttyACM[0-9]*", ACTION=="add", ATTRS{idVendor}=="15d1", MODE="0666", GROUP="dialout", PROGRAM="/opt/ros/noetic/env.sh rosrun hokuyo_node getID %N q", SYMLINK+="sensors/hokuyo_%c"
+

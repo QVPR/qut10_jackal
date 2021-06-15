@@ -1,0 +1,6 @@
+SUBSYSTEM!="usb", GOTO="rule_end"
+ENV{DEVTYPE}!="usb_device", GOTO="rule_end"
+
+ATTR{idVendor}=="1409", OWNER="ueyed", GROUP="ueye", MODE="0660"
+
+LABEL="rule_end"

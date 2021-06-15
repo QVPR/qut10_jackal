@@ -8,7 +8,7 @@
     </node>
 
     <!-- NavSat Processing -->
-    <node pkg="nmea_navsat_driver" type="nmea_topic_driver" name="nmea_topic_driver">
+    <node pkg="nmea_navsat_driver" type="nmea_topic_driver" name="nmea_topic_driver" output="screen">
     </node>
   </group>
 
