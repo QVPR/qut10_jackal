@@ -20,7 +20,7 @@ A repository for qut10_jackal.
 
 ### Install on new machines
 - Install jackal related packages: `sudo apt install ros-$ROS_DISTRO-jackal* ros-$ROS_DISTRO-ros-control ros-$ROS_DISTRO-joint-state-controller ros-$ROS_DISTRO-effort-controllers ros-$ROS_DISTRO-position-controllers ros-$ROS_DISTRO-velocity-controllers ros-$ROS_DISTRO-ros-controllers ros-$ROS_DISTRO-gazebo-ros ros-$ROS_DISTRO-gazebo-ros-control`
-- Make sure to add `172.19.54.2	jackal cpr-qut10.cpr-qut10 cpr-qut10` to your `/etc/hosts/` file
+- Make sure to add `172.19.226.81	jackal cpr-qut10.cpr-qut10 cpr-qut10` to your `/etc/hosts/` file
 - Add `export ROS_IP=$(hostname -I | awk '{print $1}')` and `export ROS_MASTER_URI=http://jackal:11311` to your `.bashrc`
 - Optional:
   - Install lcm (requirement for ark_bridge; for some reason the Ubuntu package did not do the job for me)
