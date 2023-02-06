@@ -1,7 +1,7 @@
 A repository for qut10_jackal.
 
 ### Changes from the original state of the robot
-- ~~Clearpath suggests using `wicd` to manage the WiFi connection, while we use `wpa_supplicant` in `/etc/network/interfaces` directly instead.~~ We are currently using systemd-networkd for ethernet connection handling, and iwd (https://wiki.archlinux.org/title/iwd) to handle wifi (interface wifi0). Configuration files live in /var/lib/iwd (need root permission to access) for example Robotics.psk. Useful commands on iwd website, but need sudo to use. Access the command-line interface with sudo iwctl (then take a look at 'device list' and 'known-networks-list').
+- ~~Clearpath suggests using `wicd` to manage the WiFi connection, while we use `wpa_supplicant` in `/etc/network/interfaces` directly instead.~~ We are currently using systemd-networkd for ethernet connection handling, and iwd (https://wiki.archlinux.org/title/iwd) to handle wifi (interface wifi0). Configuration files live in /var/lib/iwd (need root permission to access) for example Robotics.psk. Useful commands on iwd website, but need sudo to use. Access the command-line interface with sudo iwctl (then take a look at 'device list' and 'known-networks list').
 - ~~Static IP for the robot on the QUT WiFi: 172.19.54.2*~~ Needs checking; currently on Robotics network not QUT)
 - ~~Enabled Port Forwarding to the ARK as described in Section 4.10 of the ARK user manual; you can reach the ARK with Chrome on http://172.19.226.81~~ (Needs checking)
 - Corrected time zone: `sudo timedatectl set-timezone Australia/Brisbane`
