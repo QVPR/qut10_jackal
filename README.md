@@ -32,3 +32,7 @@ A repository for qut10_jackal.
     - `cd ~/catkin_ws/src && git clone https://github.com/autonomyresearchkit/ark_bridge.git`
     - `cd ~/catkin_ws/src/ark_bridge && ./build_client.sh` (at the time of writing, you need to apply the changes in https://github.com/autonomyresearchkit/ark_bridge/pull/1 to get it compiled)
     - `cd ~/catkin_ws/ && catkin build`
+
+## Notes for working with the Jackal:
+- Workspaces are sourced within /etc/ros/setup.bash (needs root privilege to edit). This is called from the qut10_jackal package in catkin_ws (clearpath_scripts/ros-start), handled by the ros.service (in the same package, within clearpath_services)
+- Workspaces live in $HOME and there are currently three: (1) catkin_ws, (2) lucas_ws, (3) rtk_test_ws (only catkin_ws is automatically sourced)
